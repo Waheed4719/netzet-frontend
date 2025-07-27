@@ -5,7 +5,7 @@ import { HERO_CONTENT } from "../constants/content"; // Assuming listItems is im
 const CallToAction = () => {
   return (
     <div className="w-full lg:w-fit flex flex-col items-center lg:items-start justify-center gap-2 max-w-[516px] order-2 lg:order-1">
-      <button className="shadow-cyan bg-[#fc004e] rounded-[10px] px-[40px] py-[8px] text-white font-bold text-[20px] h-[40px] w-full lg:w-[313px] items-center justify-center flex cursor-pointer">
+      <button className="shadow-cyan bg-primary-pink rounded-[10px] px-[40px] py-[8px] text-white font-bold text-[20px] h-[40px] w-full lg:w-[313px] items-center justify-center flex cursor-pointer">
         {HERO_CONTENT.cta.buttonText}{" "}
         <svg
           width="11"
@@ -38,7 +38,7 @@ const Headings = () => {
       <h1 className={`${headingClasses} text-white`}>
         {HERO_CONTENT.headings.primary}
       </h1>
-      <h1 className={`${headingClasses} text-[#00E7F9] text-shadow-pink`}>
+      <h1 className={`${headingClasses} text-primary-cyan text-shadow-pink`}>
         {HERO_CONTENT.headings.secondary}
       </h1>
     </div>

@@ -8,7 +8,6 @@ html{
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --sky-blue: #00e7f9;
 }
 
 @theme inline {
@@ -18,11 +17,16 @@ html{
   --font-urbanist: var(--font-urbanist);
 }
 
+@theme {
+  --color-primary-pink: #FC004E;
+  --color-primary-cyan: #00E7F9;
+  --color-navigation: #A9A9A9;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #fff;
     --foreground: #ededed;
-    --sky-blue: #00e7f9;
   }
 }
 
@@ -37,5 +41,5 @@ body {
 }
 
 .shadow-cyan {
-  box-shadow: 2px 2px 10px 0px #00E7F9;
+  box-shadow: 2px 2px 10px 0px var(--color-primary-cyan);
 }
