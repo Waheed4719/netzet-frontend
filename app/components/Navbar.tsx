@@ -24,9 +24,11 @@ const CloseIcon = () => (
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
+  const linkBaseClasses = "font-semibold hover:text-white";
+  const desktopLinkClasses = `${linkBaseClasses} text-[18px] text-navigation`;
+  const mobileLinkClasses = `${linkBaseClasses} block text-[24px] text-white hover:text-[#00E7F9]`;
 
   return (
     <>
@@ -46,8 +48,8 @@ const Navbar = () => {
           {NAVIGATION_LINKS.map((link) => (
             <Link
               key={link.href}
-              href={"#"}
-              className="font-semibold text-[18px] text-navigation hover:text-white"
+              href="#"
+              className={desktopLinkClasses}
             >
               {link.label}
             </Link>
@@ -57,12 +59,12 @@ const Navbar = () => {
         {/* Hamburger Menu Button - Absolute positioned on mobile */}
         <button
           onClick={toggleMenu}
-          className="lg:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1.5 cursor-pointer absolute right-0 top-1/2 transform -translate-y-1/2 "
+          className="lg:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1.5 cursor-pointer absolute right-0 top-1/2 transform -translate-y-1/2"
           aria-label="Toggle menu"
         >
-          <div className="w-6 h-0.5 bg-white"></div>
-          <div className="w-6 h-0.5 bg-white"></div>
-          <div className="w-6 h-0.5 bg-white"></div>
+          {[...Array(3)].map((_, i) => (
+            <div key={i} className="w-6 h-0.5 bg-white" />
+          ))}
         </button>
       </div>
 
@@ -84,9 +86,9 @@ const Navbar = () => {
               {NAVIGATION_LINKS.map((link) => (
                 <Link
                   key={link.href}
-                  href={"#"}
-                  onClick={() => setIsMenuOpen(false)}
-                  className="block font-semibold text-[24px] text-white hover:text-[#00E7F9]"
+                  href="#"
+                  onClick={toggleMenu}
+                  className={mobileLinkClasses}
                 >
                   {link.label}
                 </Link>
